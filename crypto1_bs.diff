@@ -1,0 +1,22 @@
+diff --git a/libnfc_crypto1_crack.c b/libnfc_crypto1_crack.c
+index 8a53f64..21feed2 100644
+--- a/libnfc_crypto1_crack.c
++++ b/libnfc_crypto1_crack.c
+@@ -713,6 +713,17 @@ int main (int argc, const char * argv[]) {
+         return 1;
+     } else {
+         printf("Found key: %012"PRIx64"\n", found_key);
++        if (argc==7) {
++            FILE *fpKey = NULL;
++            fpKey = fopen(argv[6], "a");
++            if (fpKey) {
++                fprintf(fpKey, "%012llx\r\n", found_key);
++                fclose(fpKey);
++            } else {
++                fprintf(stderr, "Cannot open: %s, exiting\n", argv[6]);
++                return 1;
++            }
++        }
+     }
+     printf("Tested %zu states\n", total_states_tested);
+ 

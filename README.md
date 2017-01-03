@@ -1,5 +1,17 @@
 # miLazyCracker
-Mifare Classic Plus - Hardnested Attack Implementation for SCL3711 LibNFC USB reader
+Mifare Classic Plus - Hardnested Attack Implementation for LibNFC USB readers (SCL3711, ASK LoGO, etc)
+
+Installation:
+```bash
+./miLazyCrackerFreshInstall.sh
+```
+
+Usage example: place a tag and enjoy
+```bash
+mkdir mydumps
+cd mydumps
+miLazyCracker
+```
 
 This tool is comprised of work from:
 -  Aram Verstegen (https://github.com/aczid/crypto1_bs) 

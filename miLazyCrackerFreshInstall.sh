@@ -1,26 +1,40 @@
-#run this from inside miLazyCracker git repo
+#!/bin/bash
 
-sudo apt-get install git
-sudo apt-get install libnfc-bin
-sudo apt-get install autoconf
-sudo apt-get install libnfc-dev
+set -x
 
-#install MFOC
-git clone https://github.com/nfc-tools/mfoc.git
+# run this from inside miLazyCracker git repo
+
+sudo apt-get install git libnfc-bin autoconf libnfc-dev
+
+# install MFOC
+[ -d mfoc ] || git clone https://github.com/nfc-tools/mfoc.git
 cd mfoc
-cp ../mfoc.c src/     #copy in modified mfoc.c 
-sudo autoreconf -vfi
+git reset --hard
+git clean -dfx
+# patch initially done against commit 48156f9b:
+patch -p1 < ../mfoc_test_prng.diff
+patch -p1 < ../mfoc_fix_4k_and_mini.diff
+patch -p1 < ../mfoc_support_tnp.diff
+autoreconf -vfi
 ./configure
-sudo make
+make
 sudo make install
 
 cd ..
 
-#install Hardnested Attack Tool
-git clone https://github.com/aczid/crypto1_bs
+# install Hardnested Attack Tool
+[ -d crypto1_bs ] || git clone https://github.com/aczid/crypto1_bs
 cd crypto1_bs
-cp ../libnfc_crypto1_crack.c .     #copy in modified .c 
+git reset --hard
+git clean -dfx
+# patch initially done against commit 957702be:
+patch -p1 < ../crypto1_bs.diff
 make get_craptev1
 make get_crapto1
 make
-sudo cp libnfc_crypto1_crack /usr/bin
+sudo cp -a libnfc_crypto1_crack /usr/local/bin
+
+cd ..
+
+# install our script
+sudo cp -a miLazyCracker.sh /usr/local/bin/miLazyCracker
