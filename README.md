@@ -2,18 +2,17 @@
 Mifare Classic Plus - Hardnested Attack Implementation for SCL3711 LibNFC USB reader
 
 This tool is comprised of work from:
+-  Aram Verstegen (https://github.com/aczid/crypto1_bs) 
 
-Aram Verstegen (https://github.com/aczid/crypto1_bs)
+-  Carlo Meijer and Roel Verdult: (http://www.cs.ru.nl/~rverdult/Ciphertext-only_Cryptanalysis_on_Hardened_Mifare_Classic_Cards-CCS_2015.pdf)
 
-Carlo Meijer and Roel Verdult: (http://www.cs.ru.nl/~rverdult/Ciphertext-only_Cryptanalysis_on_Hardened_Mifare_Classic_Cards-CCS_2015.pdf)
+-  Iceman Proxmark Branch: https://github.com/iceman1001/proxmark
 
-Iceman Proxmark Branch: https://github.com/iceman1001/proxmark
+-  Piwi Proxmark Branch - https://github.com/pwpiwi/proxmark3/tree/hard_nested
 
-Piwi Proxmark Branch - https://github.com/pwpiwi/proxmark3/tree/hard_nested
+-  Blahpost Solver
 
-Blahpost Solver
+-  MFOC - https://github.com/nfc-tools/mfoc
 
-MFOC - https://github.com/nfc-tools/mfoc
-
-MFCUK - https://github.com/nfc-tools/mfcuk
+-  MFCUK - https://github.com/nfc-tools/mfcuk
 
