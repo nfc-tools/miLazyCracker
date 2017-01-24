@@ -15,6 +15,7 @@ git clean -dfx
 patch -p1 < ../mfoc_test_prng.diff
 patch -p1 < ../mfoc_fix_4k_and_mini.diff
 patch -p1 < ../mfoc_support_tnp.diff
+patch -p1 < ../mfoc_support_2k.diff
 autoreconf -vfi
 ./configure
 make
