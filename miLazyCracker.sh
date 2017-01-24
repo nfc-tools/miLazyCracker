@@ -21,12 +21,12 @@ while [ $keepTrying -eq 1 ]; do
         echo "MFOC not possible, detected hardened Mifare Classic"
         if [ "$mfocResult" -eq 9 ]; then
             count=0
-            while read LINE; do
+            while read -r LINE; do
                 let count++
                 #echo "$count $LINE"
             done < "$TMPFILE_UNK"
 
-            arr=(`echo $LINE | tr ';' ' '`)
+            arr=($(echo "$LINE" | tr ';' ' '))
             #echo ${arr[0]}
             #echo ${arr[1]}
             #echo ${arr[2]}
@@ -38,8 +38,8 @@ while [ $keepTrying -eq 1 ]; do
             knownKeyLetter=${arr[2]}
             unknownSectorNum=${arr[3]}
             unknownKeyLetter=${arr[4]}
-            knownBlockNum=$(($knownSectorNum * 4))
-            unknownBlockNum=$(($unknownSectorNum * 4))
+            knownBlockNum=$((knownSectorNum * 4))
+            unknownBlockNum=$((unknownSectorNum * 4))
             echo "Trying HardNested Attack..."
             mycmd=(libnfc_crypto1_crack "$knownKey" "$knownBlockNum" "$knownKeyLetter" "$unknownBlockNum" "$unknownKeyLetter" "$TMPFILE_FND")
             echo "${mycmd[@]}"
@@ -51,7 +51,7 @@ while [ $keepTrying -eq 1 ]; do
 
         cryptoCrackResult=$?
         if [ "$cryptoCrackResult" -eq 0 ];then
-            while read LINE
+            while read -r LINE
             do
             echo "$LINE"
             done < "$TMPFILE_FND"
