@@ -73,8 +73,9 @@ while [ $keepTrying -eq 1 ]; do
             #echo ${arr[2]}
             #echo ${arr[3]}
             #echo ${arr[4]}
-
-            knownKey=${arr[0]}
+		
+	    temp=($(echo ${arr[0]}|fold -w2))
+            knownKey=${temp[5]}${temp[4]}${temp[3]}${temp[2]}${temp[1]}${temp[0]}
             knownSectorNum=${arr[1]}
             knownKeyLetter=${arr[2]}
             unknownSectorNum=${arr[3]}
