@@ -112,7 +112,7 @@ while [ $keepTrying -eq 1 ]; do
     fi
 done
 
-rm -f "$TMPFILE_UNK" "$TMPFILE_FND" "0x${myUID}_"*".txt"
+rm -f "$TMPFILE_UNK" "0x${myUID}_"*".txt"
 if [ $mfocResult -eq 0 ]; then
     echo -e "\n\nDump left in: $TMPFILE_MFD"
     if ask "Do you want clone the card? Place card on reader now and press Y"; then
