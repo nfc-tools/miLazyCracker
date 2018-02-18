@@ -13,6 +13,17 @@ cd mydumps
 miLazyCracker
 ```
 
+Possible issue: 
+```bash
+error	libnfc.driver.pn53x_usb	Unable to set USB configuration (Device or resource busy)
+```
+Fix: 
+```bash
+sudo modprobe -r pn533_usb
+```
+
+
+
 This tool is comprised of work from:
 -  Aram Verstegen (https://github.com/aczid/crypto1_bs) 
 
