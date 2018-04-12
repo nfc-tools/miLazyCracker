@@ -82,6 +82,12 @@ while [ $keepTrying -eq 1 ]; do
             unknownKeyLetter=${arr[4]}
             knownBlockNum=$((knownSectorNum * 4))
             unknownBlockNum=$((unknownSectorNum * 4))
+            if [ "$knownSectorNum" -gt 31 ]; then
+                knownBlockNum=$((128+((knownSectorNum-32)*16)))
+            fi
+            if [ "$unknownSectorNum" -gt 31 ]; then
+                unknownBlockNum=$((128+((unknownSectorNum-32)*16)))
+            fi
             echo "Trying HardNested Attack..."
             mycmd=(libnfc_crypto1_crack "$knownKey" "$knownBlockNum" "$knownKeyLetter" "$unknownBlockNum" "$unknownKeyLetter" "$TMPFILE_FND")
             echo "${mycmd[@]}"
