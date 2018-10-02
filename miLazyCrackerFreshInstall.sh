@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ ! -f craptev1-v1.1.tar.xz ] || [ ! -f crapto1-v3.3.tar.xz ]; then
+    echo "I need craptev1-v1.1.tar.xz and crapto1-v3.3.tar.xz. Aborting."
+    exit 1
+fi
+
 set -x
 
 # run this from inside miLazyCracker git repo
@@ -25,10 +30,11 @@ sudo apt-get install git libnfc-bin autoconf libnfc-dev
     cd crypto1_bs || exit 1
     git reset --hard
     git clean -dfx
-    # patch initially done against commit 957702be:
+    # patch initially done against commit 89de1ba5:
     patch -p1 < ../crypto1_bs.diff
-    make get_craptev1
-    make get_crapto1
+    tar Jxvf ../craptev1-v1.1.tar.xz
+    mkdir crapto1-v3.3
+    tar Jxvf ../crapto1-v3.3.tar.xz -C crapto1-v3.3
     make
     sudo cp -a libnfc_crypto1_crack /usr/local/bin
 )
