@@ -8,8 +8,17 @@ fi
 set -x
 
 # run this from inside miLazyCracker git repo
-
-sudo apt-get install git libnfc-bin autoconf libnfc-dev
+if [ -f "/etc/debian_version" ]; then
+    pkgs=""
+    for pkg in git libnfc-bin autoconf libnfc-dev; do
+        if ! dpkg -l $pkg >/dev/null 2>&1; then
+            pkgs="$pkgs $pkg"
+        fi
+    done
+    if [ "$pkgs" != "" ]; then
+        sudo apt-get install $pkgs
+    fi
+fi
 
 # install MFOC
 [ -d mfoc ] || git clone https://github.com/nfc-tools/mfoc.git
