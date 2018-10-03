@@ -10,7 +10,7 @@ index 2015dcb..0fa7436 100755
 +            FILE *fpKey = NULL;
 +            fpKey = fopen(argv[6], "a");
 +            if (fpKey) {
-+                fprintf(fpKey, "%012llx\r\n", found_key);
++                fprintf(fpKey, "%012"PRIx64"\r\n", found_key);
 +                fclose(fpKey);
 +            } else {
 +                fprintf(stderr, "Cannot open: %s, exiting\n", argv[6]);
