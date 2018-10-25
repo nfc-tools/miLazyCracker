@@ -44,4 +44,3 @@ This tool is comprised of work from:
 -  MFOC - https://github.com/nfc-tools/mfoc
 
 -  MFCUK - https://github.com/nfc-tools/mfcuk
-
