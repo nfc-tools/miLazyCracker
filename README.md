@@ -4,8 +4,6 @@ Mifare Classic Plus - Hardnested Attack Implementation for LibNFC USB readers (S
 Installation:
 
 ```bash
-wget http://www2.vaneay.fr/mifare/craptev1-v1.1.tar.xz
-wget http://www2.vaneay.fr/mifare/crapto1-v3.3.tar.xz
 ./miLazyCrackerFreshInstall.sh
 ```
 
@@ -36,7 +34,7 @@ This tool is comprised of work from:
 
 -  Piwi Proxmark Branch - https://github.com/pwpiwi/proxmark3/tree/hard_nested
 
--  Blahpost Solver
+-  Blapost Solver
 
 -  MFOC - https://github.com/nfc-tools/mfoc
 
