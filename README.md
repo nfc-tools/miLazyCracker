@@ -4,8 +4,8 @@ Mifare Classic Plus - Hardnested Attack Implementation for LibNFC USB readers (S
 Installation:
 
 ```bash
-# wget http://www2.vaneay.fr/mifare/craptev1-v1.1.tar.xz
-# wget http://www2.vaneay.fr/mifare/crapto1-v3.3.tar.xz
+wget http://www2.vaneay.fr/mifare/craptev1-v1.1.tar.xz
+wget http://www2.vaneay.fr/mifare/crapto1-v3.3.tar.xz
 ./miLazyCrackerFreshInstall.sh
 ```
 
