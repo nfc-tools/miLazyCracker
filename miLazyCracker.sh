@@ -47,9 +47,17 @@ TMPFILE_UNK="mfc_${myUID}_unknownMfocSectorInfo.txt"
 TMPFILE_FND="mfc_${myUID}_foundKeys.txt"
 
 if [ -f "$TMPFILE_FND" ]; then
-    mfoc -f "$TMPFILE_FND" -O "$TMPFILE_MFD"  -D "$TMPFILE_UNK"
+    if [ -f "extended-std.keys"]; then
+        mfoc -f "$TMPFILE_FND" -f "extended-std.keys" -O "$TMPFILE_MFD"  -D "$TMPFILE_UNK"
+    else
+        mfoc -f "$TMPFILE_FND" -O "$TMPFILE_MFD"  -D "$TMPFILE_UNK"
+    fi
 else
-    mfoc -O "$TMPFILE_MFD" -D "$TMPFILE_UNK"
+    if [ -f "extended-std.keys" ]; then
+        mfoc -f "extended-std.keys" -O "$TMPFILE_MFD" -D "$TMPFILE_UNK"
+    else
+        mfoc -O "$TMPFILE_MFD" -D "$TMPFILE_UNK"
+    fi
 fi
 mfocResult=$?
 prngNotVulnerable=9
