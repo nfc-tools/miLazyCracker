@@ -3,8 +3,8 @@
 # try to get craptev1-v1.1.tar.xz and crapto1-v3.3.tar.xz
 # 2550aa92fcb504b62dbc4a978c51d283f34ed2d393ea0c55444dc4bf5cd3c4e4  craptev1-v1.1.tar.xz
 # c116df63d88bea2966b98cf77170a7382585789b9e47088766e167a666230a20  crapto1-v3.3.tar.xz
-[ -f craptev1-v1.1.tar.xz ] || wget http://www2.vaneay.fr/mifare/craptev1-v1.1.tar.xz
-[ -f crapto1-v3.3.tar.xz ] || wget http://www2.vaneay.fr/mifare/crapto1-v3.3.tar.xz
+[ -f craptev1-v1.1.tar.xz ] || wget http://web.archive.org/web/20190221140220if_/http://www2.vaneay.fr/mifare/craptev1-v1.1.tar.xz
+[ -f crapto1-v3.3.tar.xz ] || wget http://web.archive.org/web/20190221140255if_/http://www2.vaneay.fr/mifare/crapto1-v3.3.tar.xz
 
 if [ ! -f craptev1-v1.1.tar.xz ] || [ ! -f crapto1-v3.3.tar.xz ]; then
     echo "I need craptev1-v1.1.tar.xz and crapto1-v3.3.tar.xz. Aborting."
