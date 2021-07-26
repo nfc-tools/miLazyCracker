@@ -5,7 +5,6 @@
 # gets a valid answer.
 
 ask() {
-    # http://djm.me/ask
     local prompt default REPLY
 
     while true; do
