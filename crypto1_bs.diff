@@ -1,5 +1,5 @@
 diff --git a/Makefile b/Makefile
-index 758e411..c0708be 100755
+index c52e87b..575ffea 100755
 --- a/Makefile
 +++ b/Makefile
 @@ -7,7 +7,7 @@
@@ -8,9 +8,9 @@ index 758e411..c0708be 100755
  
 -CFLAGS = -std=gnu99 -O3 -march=native
 +CFLAGS = -std=gnu99 -O3 -march=native -fcommon
+ LDFLAGS=  -Wl,--allow-multiple-definition
  
  all: solve_bs solve_piwi_bs solve_piwi libnfc_crypto1_crack
- 
 diff --git a/libnfc_crypto1_crack.c b/libnfc_crypto1_crack.c
 index 2015dcb..4147433 100755
 --- a/libnfc_crypto1_crack.c

@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # try to get craptev1-v1.1.tar.xz and crapto1-v3.3.tar.xz
 # 2550aa92fcb504b62dbc4a978c51d283f34ed2d393ea0c55444dc4bf5cd3c4e4  craptev1-v1.1.tar.xz
@@ -22,7 +23,7 @@ if [ -f "/etc/debian_version" ]; then
         fi
     done
     if [ "$pkgs" != "" ]; then
-        sudo apt-get install $pkgs
+        sudo apt-get install $pkgs -y || true
     fi
 fi
 
